@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public TMP_Text debug_text;
+    //public TMP_Text debug_text;
 
     public Camera cam;
     private Vector2 look_input = Vector2.zero;
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public int invert_x_factor = 1;
     public int invert_y_factor = 1;
 
+    /*
     private Vector2 move_input;
     private bool grounded;
 
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
     public float stopSpeed = .5f;
     public float jumpImpulse = 10f;
     public float friction = 4f;
-    
+    */
       
     void Start()
     {
@@ -45,23 +46,25 @@ public class PlayerController : MonoBehaviour
         if (invert_x == true) invert_x_factor = -1;
         if (invert_y == true) invert_y_factor = -1;
 
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         debug_text.text = "Player Velocity: " + controller.velocity.ToString();
         debug_text.text += "\nWish Direction: " + wishDir.ToString();
         debug_text.text += "\nPlayer Speed: " + new Vector3(playerVelocity.x, 0 , playerVelocity.z).magnitude.ToString();
         debug_text.text += "\nGrounded: " + grounded.ToString();
+        */
 
         Look();
     }
 
     private void FixedUpdate()
     {
+        /*
         wishDir = transform.right * move_input.x + transform.forward * move_input.y;
         wishDir = wishDir.normalized;
 
@@ -83,21 +86,24 @@ public class PlayerController : MonoBehaviour
         }
         
         controller.Move(playerVelocity * Time.deltaTime);
+        */
     }
 
     public void GetLookInput(InputAction.CallbackContext context)
     {
         look_input = context.ReadValue<Vector2>();
     }
+
+    /*
     public void GetMoveInput(InputAction.CallbackContext context)
     {
-        move_input = context.ReadValue<Vector2>();
+        //move_input = context.ReadValue<Vector2>();
     }
     public void GetJumpInput(InputAction.CallbackContext context)
     {
-        Jump();
+        //Jump();
     }
-
+    */
     private void Look()
     {
         //looking left or right
@@ -110,6 +116,7 @@ public class PlayerController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(horizontal_look_angle, 0 , 0);
     }
 
+    /*
     private void Jump()
     {
         if(grounded)
@@ -156,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
         return Acceleration(wishDir, newVelocity, acceleration, maxSpeed);
     }
-    
+    */
     
 
 
