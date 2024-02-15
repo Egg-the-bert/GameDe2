@@ -330,8 +330,8 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564950640}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 564950641}
+        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
         m_MethodName: GetMoveInput
         m_Mode: 0
         m_Arguments:
@@ -346,8 +346,8 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564950640}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 564950641}
+        m_TargetAssemblyTypeName: PlayerStateMachine, Assembly-CSharp
         m_MethodName: GetJumpInput
         m_Mode: 0
         m_Arguments:
@@ -394,6 +394,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ad4d9ed29942047bbe66d443188d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug_text: {fileID: 2026098327}
+  move_input: {x: 0, y: 0}
+  controller: {fileID: 0}
+  playerVelocity: {x: 0, y: 0, z: 0}
+  wishDir: {x: 0, y: 0, z: 0}
+  jumpImpulse: 10
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
